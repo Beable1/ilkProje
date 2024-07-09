@@ -1,0 +1,46 @@
+﻿@* @model List<ilkProje.Models.Product>
+	<h3>Modelden aktarım</h3>
+<ul>
+	@foreach (var product in Model)
+	{
+		<li>@product.ProductName</li>
+		<li>@product.Id </li>
+		<li>@product.Quanity</li>
+	}
+
+</ul>
+
+
+<h3>ViewBag</h3>
+<ul>
+	@foreach (var product in ViewBag.products as List<ilkProje.Models.Product>)
+	{
+		<li>@product.ProductName</li>
+		<li>@product.Id </li>
+		<li>@product.Quanity</li>
+	}
+</ul>
+
+<h3>ViewData</h3>
+<ul>
+	@foreach (var product in ViewData["products"] as List<ilkProje.Models.Product>)
+	{
+		<li>@product.ProductName</li>
+		<li>@product.Id </li>
+		<li>@product.Quanity</li>
+	}
+</ul> *@
+
+
+@model List<ilkProje.Models.Product>
+
+@section solmenu{
+	SOLMENU
+}
+
+@{
+	Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+Products
+
