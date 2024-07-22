@@ -5,8 +5,14 @@ using System.Text.Json;
 
 namespace ilkProje.Controllers
 {
+    [Route("[controller]/[action]")]
     public class ProductController : Controller
     {
+        readonly IConfiguration _configuration;
+        public ProductController(IConfiguration configuration) { 
+            _configuration = configuration;
+        }
+
         public IActionResult GetProducts()
         {
             //var products = new List<Product>
@@ -15,6 +21,7 @@ namespace ilkProje.Controllers
             //    new Product { Id = 2, ProductName = "product 2", Quanity = 25 },
             //    new Product { Id = 3,ProductName="product 3",Quanity=20}
             //};
+            
 
             Product product = new Product
             {
@@ -92,6 +99,8 @@ namespace ilkProje.Controllers
           
         public IActionResult CreateProduct()
         {
+            var isim=_configuration["Name"];
+            Console.WriteLine(isim);
             return View();
         }
 

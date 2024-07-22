@@ -1,0 +1,12 @@
+﻿@model ilkProje.Models.ViewModels.EmployeeCreateVM
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<form asp-action="Index" asp-controller="Employee" method="post">
+	<input type="text" asp-for="Name" /> <br />
+	<input type="text" asp-for="LastName" /> <br />
+	<button>Gönder</button>
+</form>
